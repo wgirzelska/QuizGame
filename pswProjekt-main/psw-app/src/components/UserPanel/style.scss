@@ -1,0 +1,206 @@
+//- Google Fonts
+$font-google-primary: 'https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap';
+$font-google-secondary: 'https://fonts.googleapis.com/css2?family=Montserrat&display=swap';
+
+//- @type List
+$abril-fatface: 'Abril Fatface', cursive;
+$montserrat: 'Montserrat', sans-serif;
+
+//- Typography
+$base-font-family: $montserrat;
+$heading-font-family: $abril-fatface;
+
+table{
+    background-color: #1777ff;
+    width: 100%;
+    color: white;
+    border-radius: 5px;
+    tr{
+        height: 20px;
+        text-align: center;
+        background-color: #6ca3ef;
+    }
+    th{
+        height: 20px; 
+    }
+}
+
+
+/* Animation property */
+.startingButton {
+    color: white;
+    animation: wiggle 2s linear infinite;
+  }
+  
+  /* Keyframes */
+  @keyframes wiggle {
+    0%, 7% {
+      transform: rotateZ(0);
+    }
+    15% {
+      transform: rotateZ(-15deg);
+    }
+    20% {
+      transform: rotateZ(10deg);
+    }
+    25% {
+      transform: rotateZ(-10deg);
+    }
+    30% {
+      transform: rotateZ(6deg);
+    }
+    35% {
+      transform: rotateZ(-4deg);
+    }
+    40%, 100% {
+      transform: rotateZ(0);
+    }
+  }
+
+  :root {
+    --background-color: #d6e0f5;
+    --text-color: rgb(81, 79, 79);
+  }
+
+  .wrapper {
+    display: grid;
+    place-content: center;
+    background-color: var(--background-color);
+    min-height: 10vh;
+    font-family: $heading-font-family;
+    font-size: 80px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--text-color);
+    .top .bottom{
+        font-family: $heading-font-family;
+    }
+  }
+  
+  .wrapper > div {
+    grid-area: 1/1/-1/-1;
+  }
+  .top {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 48%, 0% 58%);
+  }
+  .bottom {
+    clip-path: polygon(0% 60%, 100% 50%, 100% 100%, 0% 100%);
+    color: transparent;
+    background: linear-gradient(177deg, rgb(0, 0, 0) 20%, var(--text-color) 95%);
+    -webkit-background-clip: text;
+  }
+  
+
+
+.logoLogout{
+    display: flex;
+    img{
+        width: 250px;
+        height: 250px;
+        
+    }
+}
+
+h1{
+    font-size: 20px;
+    font-family: $base-font-family;
+}
+
+h1:nth-child(2){
+    font-size: 30px;
+    font-weight: bolder;
+    text-align: center;
+    font-family: $base-font-family;
+    text-transform: uppercase;
+    padding-bottom: 40px;
+    color: rgb(79, 78, 78);
+}
+
+$font-size-small: 0.875em;
+
+/* COLOR HEX */
+$cadet: rgb(81, 79, 79);
+$maximum-blue: #1777ff;
+$columbia-blue: #c0d6dfff;
+$platinum: #eaeaeaff;
+$cultured: #f3f3f3ff;
+$nero: #444444;
+
+/* COLOR Gradient */
+$dl-gradient-right: linear-gradient(90deg, rgba(0,0,0,0.04) 20%, rgba(255,255,255,0) 0%);
+
+$body-background-color: $platinum;
+$body-text-color: $nero;
+
+//- Global Functions
+/*import fonts*/
+@if variable-exists(font-google-primary) {
+  @import url($font-google-primary);
+}
+@if variable-exists(font-google-secondary) {
+  @import url($font-google-secondary);
+}
+
+//- Global Mixins
+
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+  
+}
+
+
+.dl-blurbs {
+	display: grid;
+}
+/* LIST */
+dl {
+  counter-reset: count;
+	background: $dl-gradient-right;
+	padding-left: 4vw; //default is smartphone
+	padding-right: 4vw;
+	margin: 0;
+	
+}
+dl + dl {
+	counter-reset: counter 4;
+}
+dt {
+  counter-increment: count;
+	color: $cadet;
+	font-family: $base-font-family;
+	font-size: 4vw;
+	text-transform: uppercase;
+}
+dt::before {
+  content: counter(count, decimal-leading-zero)".";
+	font-family: $heading-font-family;
+	color: $maximum-blue;
+	margin-left: -1vw;
+	padding-right: 12px;
+}
+
+dd {
+	margin-left: 5vw;
+	margin-bottom: 2vh;
+}
+
+.rulesDiv{
+    display: flex;
+}
+
+.beforePage{
+  height: 75vh;
+  text-align: center;
+  margin-top: 5vh;
+}
+
+.tableRank{
+  display: flex;
+  justify-content: space-around;
+  background-color: #1777ff;
+  border-radius: 10px;
+  color: white;
+}

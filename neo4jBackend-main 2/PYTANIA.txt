@@ -1,0 +1,3 @@
+single choice
+CREATE(n:Question {question:"Jaki jest największy kontynent na Ziemi?",correctAnswerArray: ["Asia"],answerArray:["Africa", "Asia", "Europe", "North America"],type: "ONECHOICE", category:"geography", wasAnswered:false}) RETURN n.question
+
